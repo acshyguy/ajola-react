@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import CardDetail from './Component/CardDetail';
+import { faker } from '@faker-js/faker';
+import CardList from './Component/CardList';
+import NewCard from './Component/NewCard';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function greet(){
+    return "Hello from AC"
 }
 
-export default App;
+const App = () => {
+    const style = { color: "red" };
+  const title = {name: "Eden", quality: "Astonishingly beautiful"}  
+  return (
+    <div>
+        <h1 style={style}>
+            {title.name} is {title.quality}, I swear!
+        </h1>
+        
+        <CardList />
+
+        <NewCard />
+
+    </div>
+  );
+};
+
+export default App
